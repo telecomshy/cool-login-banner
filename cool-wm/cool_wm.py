@@ -34,4 +34,5 @@ if __name__ == '__main__':
     # cl.excute('pwd')
     cl.generate_wm(figlet_engine, text='hello world', font='boom')
     # pyfiglet.FigletFont.getFonts()
+    # how to get all colors
 
