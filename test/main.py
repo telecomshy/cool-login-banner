@@ -1,7 +1,10 @@
-from cool_login_banner.cool_wm import CoolLoginBanner
-from pyfiglet import figlet_format
+from cool_login_banner import CoolLoginBanner, CowsayEngine, FigletEngine
+from pyfiglet import figlet_format, Figlet
+from colorama import init, Back, Fore
 
-cl = CoolLoginBanner(host='192.168.44.131', user='telecomshy', connect_kwargs={'password': 'shy501024'})
-wm = cl.generate_banner(figlet_format, text='telecomshy host')
-# cl.set_ssh_banner(wm)
-cl.reset_ssh_banner()
+cl = CoolLoginBanner(CowsayEngine, host='192.168.44.131', user='shy', password='shy501024')
+banner = cl.generate_banner(text='fuck off', char='fox')
+# cl.set_banner_after_login(banner)
+
+cl.clear_banner_after_login()
+# cl.clear_ssh_banner()
