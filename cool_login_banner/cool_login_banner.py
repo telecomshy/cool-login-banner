@@ -2,6 +2,7 @@ from fabric import Connection
 from invoke import sudo
 from functools import partial
 from pathlib import Path
+from io import StringIO, BytesIO
 
 
 class CoolLoginBanner:
@@ -28,12 +29,10 @@ class CoolLoginBanner:
         return banner
 
     def _save_banner_to_file(self, banner, file):
-        with open('tmp_banner', 'wt') as f:
-            f.write(banner)
-        self.conn.put('tmp_banner', '/tmp')
-        self.sudo(f'mv /tmp/tmp_banner {file}')
-        self.sudo(f'rm -f /tmp/tmp_banner')
-        Path('tmp_banner').unlink(missing_ok=True)
+        with BytesIO(banner.encode('utf8')) as f:
+            self.conn.put(f, '/tmp/tmp_banner')
+            self.sudo(f'mv /tmp/tmp_banner {file}')
+            self.sudo(f'rm -f /tmp/tmp_banner')
 
     def _clear_file(self, file):
         self.sudo(f'sed -i "/^/d" {file}')
