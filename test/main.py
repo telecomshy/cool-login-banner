@@ -1,10 +1,10 @@
-from cool_login_banner import CoolLoginBanner, CowsayEngine, FigletEngine
+from cool_login_banner import CoolLoginBanner, CowsayEngine, FigletEngine, TextEngine
 from pyfiglet import figlet_format, Figlet
-from colorama import init, Back, Fore
+from colorama import init, Back, Fore, just_fix_windows_console
+from termcolor import colored
 
-cl = CoolLoginBanner(CowsayEngine, host='192.168.44.131', user='shy', password='shy501024')
-banner = cl.generate_banner(text='滚', char='fox')
-cl.set_banner_after_login(banner)
+cl = CoolLoginBanner(TextEngine, host='192.168.44.131', user='shy', password='shy501024')
+# cl.preview_styles()
 
-# cl.clear_banner_after_login()
-# cl.clear_ssh_banner()
+cl.set_ssh_banner(text='fuck off', fore_color='red', back_color='blue', styles=['blink', 'underline'])
+
