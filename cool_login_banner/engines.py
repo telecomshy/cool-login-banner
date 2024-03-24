@@ -3,7 +3,6 @@ import pyfiglet
 import termcolor
 from abc import ABC, abstractmethod
 from colorama import Fore, Back, Style, just_fix_windows_console
-from termcolor import colored
 
 just_fix_windows_console()
 
@@ -74,16 +73,16 @@ class FigletEngine(Engine):
 
 
 class CowsayEngine(Engine):
-    def generate_original_banner(self, animal_name, text):
-        if animal_name in self.animal_names:
-            return cowsay.get_output_string(animal_name, text) + '\n'
+    def generate_original_banner(self, name, text):
+        if name in self.names:
+            return cowsay.get_output_string(name, text) + '\n'
         else:
-            return cowsay.draw(text, animal_name, False)
+            return cowsay.draw(text, name, False)
 
     @property
-    def animal_names(self):
+    def names(self):
         return cowsay.char_names
 
-    @staticmethod
-    def preview_animal(animal):
-        getattr(cowsay, animal)(animal)
+    def preview_animals(self):
+        for name in self.names:
+            getattr(cowsay, name)(text=name)
