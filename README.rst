@@ -15,5 +15,5 @@ Cool Login Banner
 然后再次登录，你的登录界面就变成这样了：
 
 .. image:: docs/img/login_banner.gif
-    :width: 250
+    :width: 300
 
