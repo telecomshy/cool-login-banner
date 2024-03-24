@@ -74,11 +74,11 @@ class FigletEngine(Engine):
 
 
 class CowsayEngine(Engine):
-    def generate_original_banner(self, name, text):
-        if name in self.animal_names:
-            return cowsay.get_output_string(name, text) + '\n'
+    def generate_original_banner(self, animal_name, text):
+        if animal_name in self.animal_names:
+            return cowsay.get_output_string(animal_name, text) + '\n'
         else:
-            return cowsay.draw(text, name, False)
+            return cowsay.draw(text, animal_name, False)
 
     @property
     def animal_names(self):
