@@ -4,7 +4,7 @@ from functools import partial
 from io import BytesIO
 
 
-class CoolLoginBanner:
+class BannerSetter:
     SSHD_CONFIG_PATH = '/etc/ssh/sshd_config'
     SSH_BANNER_PATH = '/etc/ssh/login_banner'
     MOTD_PATH = '/etc/motd'

@@ -1,2 +1,2 @@
-from .cool_login_banner import CoolLoginBanner
+from .banner_setter import BannerSetter
 from .engines import FigletEngine, CowsayEngine, TextEngine
