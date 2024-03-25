@@ -13,12 +13,10 @@ class BannerSetter:
     ISSUE_PATH: ClassVar[str] = '/etc/issue'
     ISSUE_NET_PATH: ClassVar[str] = '/etc/issue_net'
 
-    def __init__(self, engine: type(Engine) | None = None, *, host: str | None = None, port: int = 22, user: str | None = None,
-                 password: str | None = None, encoding: str = 'utf8', **kwargs):
-        """用户需要有sudo权限，如果没有设置免密，还需要设置password参数。所有关键字参数在内部都会传递给
-        ``fabric.Connection`` 构造函数
+    def __init__(self, engine: type(Engine) | None = None, host: str | None = None, port: int = 22,
+                 user: str | None = None, password: str | None = None, encoding: str = 'utf8', **kwargs):
+        """用户需要有sudo权限，如果没有设置免密，还需提供password。所有关键字参数在内部都会传递给 ``fabric.Connection`` 构造函数"""
 
-        """
         self.engine = engine if engine is None else engine()
 
         if host:
@@ -34,7 +32,6 @@ class BannerSetter:
 
         由于banner中包含各种字符，使用bash命令将内容保存到文件总是报非法字符错误，因此用了一个取巧的办法。
         直接保存为 BytesIO 文件，上传到服务器，然后再修改文件归属。
-
         """
         with BytesIO(text.encode('utf8')) as f:
             self.conn.put(f, '/tmp/tmp_banner')
@@ -100,7 +97,6 @@ class BannerSetter:
         """生成banner并保存到/etc/issue文件，参数会送到引擎的generate_banner方法
 
         issue文件的内容，会在本机使用tty登录之前显示，ssh远程登录应使用set_ssh_banner方法
-
         """
 
         banner = self.generate_banner(*args, **kwargs)
@@ -120,7 +116,6 @@ class BannerSetter:
         """生成banner并保存到/etc/issue_net文件，参数会送到引擎的generate_banner方法
 
         issue_net文件的内容，会在使用telnet登录之前显示，ssh远程登录应使用set_ssh_banner方法
-
         """
 
         banner = self.generate_banner(*args, **kwargs)
