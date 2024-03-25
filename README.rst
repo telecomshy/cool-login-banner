@@ -12,10 +12,10 @@ Cool Login Banner
 - `安装`_
 - `描述`_
 - `基本用法`_
-    - `远程或本地`_
-    - `修改不同的banner`_
-    - `banner引擎`_
-    - `自定义banner`_
+   * `远程或本地`_
+   * `修改不同的banner`_
+   * `banner引擎`_
+   * `自定义banner`_
 - `说明`_
 
 安装
@@ -154,7 +154,7 @@ banner，两者的函数签名是一致的。
 增加特性和方法：
 
 - ``engine.patterns``: 查看所有内置的图案名称
-- ``engine.preview_patterns`` 预览所有的图案
+- ``engine.preview_patterns()`` 预览所有的图案
 
 自定义banner
 ~~~~~~~~~~~~~~~~
