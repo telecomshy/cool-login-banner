@@ -15,6 +15,7 @@ Cool Login Banner
     - `远程或本地`_
     - `修改不同的banner`_
     - `banner引擎`_
+    - `自定义banner`_
 
 安装
 ----------
