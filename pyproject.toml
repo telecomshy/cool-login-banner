@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cool-login-banner"
-version = "0.1.1"
+version = "0.1.2"
 description = "Easy and quick set interesting linux login banner."
 authors = ["telecomshy <telecomshy@126.com>"]
 readme = "README.rst"
