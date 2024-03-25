@@ -30,7 +30,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 1. 创建 ``BannerSetter`` 对象。
 2. 调用不同的方法设置对应的登陆banner。
 
-.. code-block:: python
+.. code-block::
 
     from cool_login_banner import BannerSetter, CowsayEngine
 
@@ -44,7 +44,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
 恢复也很容易：
 
-.. code-block:: python
+.. code-block::
 
     bs.clear_ssh_banner()
 
@@ -98,7 +98,7 @@ banner，两者的函数签名是一致的。
 
 可以通过以下几个方法查看内置的所有颜色，风格或者进行预览：
 
-.. code-block:: python
+.. code-block::
 
     engine.fore_colors                  # 查看所有前景色名称
     engine.back_colors                  # 查看所有背景色名称
@@ -135,7 +135,7 @@ banner，两者的函数签名是一致的。
 - ``text``: banner文本框内文字
 - ``pattern``: 图案的名称，默认是一头牛。你甚至可以直接传入自己的图案。
 
-.. code-block:: python
+.. code-block::
 
     engine = CowsayEngine()
     fish = r'''
@@ -168,7 +168,7 @@ banner，两者的函数签名是一致的。
 
 下面是一个例子：
 
-.. code-block:: python
+.. code-block::
 
     from cool_login_banner import BannerSetter, CowsayEngine, FigletEngine, TextEngine
 
