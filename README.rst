@@ -34,18 +34,20 @@ Cool Login Banner 可以快捷方便的定制你的linux登录界面，比如:
 基本用法
 ~~~~~~~~~~
 
-Cool Login Banner 使用很容易，创建 ``BannerSetter`` 对象，指定 banner 生成引擎，然后调用相应的方法即可设置服务器登陆页面。
+Cool Login Banner 使用很容易，创建 ``BannerSetter`` 对象，指定 banner 生成引擎，然后调用不同的方法即可设置相应的服务器登陆页面。
 
 如果提供了 ``host`` 参数，内部会使用 :py:class:`fabric.Connection` 进行远程连接。如果本地执行，则无需提供 ``host``, 内部会使用
 ``invoke.sudo`` 执行指令。
 
 ``BannerSetter`` 的函数签名是：
 
-.. py:Class:: BannerSetter(engine, )
+.. py:class:: BannerSetter(engine: Engine, host: str | None = None, port: int = 22, user: str | None = None, password: str | None = None, encoding: str = 'utf8', **kwargs: any) -> None
 
-    :param engine Engine: banner生成引擎
+    :param engine: banner生成引擎
 
+提供了四种方法，可以修改不同的login登陆页面：
 
+- ``set_ssh_banner`` : 修改ssh远程登陆页面
 
 引擎介绍
 ~~~~~~~~~~
