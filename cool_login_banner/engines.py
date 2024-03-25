@@ -63,12 +63,16 @@ class Engine(ABC):
         for color in Fore.__dict__:
             print(getattr(Fore, color.upper()) + color)
 
+        print(Style.RESET_ALL)
+
     @staticmethod
     def preview_back_colors() -> None:
         """背景色预览"""
 
         for color in Back.__dict__:
             print(getattr(Back, color.upper()) + color)
+
+        print(Style.RESET_ALL)
 
     @staticmethod
     def preview_styles() -> None:

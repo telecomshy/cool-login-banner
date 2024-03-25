@@ -18,7 +18,9 @@ Cool Login Banner
 安装
 ----------
 
-尚未发布...
+.. code-block::
+
+    pip install cool-login-banner
 
 描述
 ----------
@@ -35,7 +37,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
     bs = BannerSetter(CowsayEngine, host='192.168.44.131', user='username', port=22, password='password')
     bs.set_ssh_banner(text="A python enthusiast's site", pattern='cow', fore_color='lightyellow_ex', styles=['blink'])
 
-登录主机，你的登录页面就变成这样了:
+登录主机，登录页面就变成这样了:
 
 .. image:: ./docs/img/login_banner.gif
     :width: 400
