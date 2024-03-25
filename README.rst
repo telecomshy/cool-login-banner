@@ -33,7 +33,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
     from cool_login_banner import BannerSetter, CowsayEngine
 
     bs = BannerSetter(CowsayEngine, host='192.168.44.131', user='username', port=22, password='password')
-    bs.set_ssh_banner(text="A python enthusiast's site", name='cow', fore_color='lightyellow_ex', styles=['blink'])
+    bs.set_ssh_banner(text="A python enthusiast's site", pattern='cow', fore_color='lightyellow_ex', styles=['blink'])
 
 登录主机，你的登录页面就变成这样了:
 
