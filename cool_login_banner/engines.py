@@ -21,8 +21,8 @@ class Engine(ABC):
     def generate_original_banner(self, *args, **kwargs):
         pass
 
-    def generate_banner(self, *, fore_color=None, back_color=None, styles=None, preview=True, **kwargs):
-        banner = self.generate_original_banner(**kwargs)
+    def generate_banner(self, *args, fore_color=None, back_color=None, styles=None, preview=True, **kwargs):
+        banner = self.generate_original_banner(*args, **kwargs)
         if fore_color is not None:
             banner = getattr(Fore, fore_color.upper()) + banner
         if back_color is not None:
@@ -77,16 +77,16 @@ class FigletEngine(Engine):
 
 
 class CowsayEngine(Engine):
-    def generate_original_banner(self, text, name='cow'):
-        if name in self.names:
-            return cowsay.get_output_string(name, text) + '\n'
+    def generate_original_banner(self, text, pattern='cow'):
+        if pattern in self.patterns:
+            return cowsay.get_output_string(pattern, text) + '\n'
         else:
-            return cowsay.draw(text, name, False)
+            return cowsay.draw(text, pattern, False)
 
     @property
-    def names(self):
+    def patterns(self):
         return cowsay.char_names
 
-    def preview_animals(self):
-        for name in self.names:
-            getattr(cowsay, name)(text=name)
+    def preview_patterns(self):
+        for pattern in self.patterns:
+            getattr(cowsay, pattern)(text=pattern)

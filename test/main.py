@@ -13,4 +13,16 @@ text = """
 # clb.set_ssh_banner(text='hello', name='fox')
 # clb.clear_ssh_banner()
 
-print(clb.styles)
+
+engine = CowsayEngine()
+fish = r'''
+\
+ \  
+        /`·.¸
+     /¸...¸`:·
+ ¸.·´  ¸   `·.¸.·´)
+: © ):´;      ¸  {
+ `·.¸ `·  ¸.·´\`·¸)
+     `\\´´\¸.·´
+'''
+engine.generate_banner('hello world', pattern=fish)

@@ -14,7 +14,7 @@ Cool Login Banner
 - `基本用法`_
     - `远程或本地`_
     - `修改不同的banner`_
-    - `引擎通用方法`_
+    - `banner引擎`_
 
 安装
 ----------
@@ -70,20 +70,29 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 修改不同的banner
 ~~~~~~~~~~~~~~~~~~~
 
-``BannerSetter`` 对象提供了四个方法，分别修改不同的login登陆页面：
+``BannerSetter`` 提供了四个方法，分别修改不同的login登陆页面：
 
 - ``set_ssh_banner`` : 设置ssh远程登陆的banner，此登陆之前显示。内部修改 /etc/ssh/sshd_config 文件
 - ``set_motd_banner`` : 设置成功登陆以后的banner。内部修改 /etc/motd 文件。
 - ``set_tty_banner`` : 设置本机终端登陆的banner，在登陆之前显示。内部修改 /etc/issue 文件。
 - ``set_telnet_banner`` : 设置telnet远程登陆的banner，在登陆之前显示。内部修改 /etc/issue_net 文件。
 
-引擎通用方法
+banner引擎
 ~~~~~~~~~~~~~~~~
 
-所有引擎都可以通过 ``fore_color``, ``back_color``, ``styles`` 关键字参数设置前景色，背景色以及风格。
-并且提供了以下几个方法查看内置的颜色或者进行预览：
+``BannerSetter`` 的所有 ``set`` 开头的方法实际上都是在内部调用了引擎的 ``generate_banner`` 方法生成
+banner，两者的函数签名是一致的。
 
-.. code-block::
+所有引擎的 ``generate_banner`` 方法都接受以下几个参数，同时进行了扩展：
+
+- ``fore_color``: 设置banner的前景色
+- ``back_color``: 设置banner的背景色
+- ``styles``: 列表，可以指定banner的风格，比如闪烁，下划线...
+- ``preview``: 生成banner的同时是否打印
+
+可以通过以下几个方法查看内置的所有颜色，风格或者进行预览：
+
+.. code-block:: python
 
     engine.fore_colors                  # 查看所有前景色名称
     engine.back_colors                  # 查看所有背景色名称
@@ -94,14 +103,58 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
 .. note::
 
-    可以在 ``BannerSetter`` 实例上调用所有 ``engine`` 的方法
+    可以在 ``BannerSetter`` 实例上直接调用所有 ``engine`` 的方法。
 
-figlet引擎
-~~~~~~~~~~~~~~~~
+**TextEngine**
 
-cowsay引擎
-~~~~~~~~~~~~~~~~
+``generate_banner`` 增加参数：
+
+- ``text``: banner文字
+
+**FigletEngine**
+
+``generate_banner`` 增加参数：
+
+- ``text``: banner文字
+- ``font``: 生成的文字风格
+
+增加特性：
+
+- ``engine.figlet_fonts``: 查看所有支持的文字风格
+
+**CowsayEngine**
+
+``generate_banner`` 增加参数：
+
+- ``text``: banner文本框内文字
+- ``pattern``: 图案的名称，默认是一头牛。你甚至可以直接传入自己的图案。
+
+.. code-block:: python
+
+    engine = CowsayEngine()
+    fish = r'''
+    \
+     \
+            /`·.¸
+         /¸...¸`:·
+     ¸.·´  ¸   `·.¸.·´)
+    : © ):´;      ¸  {
+     `·.¸ `·  ¸.·´\`·¸)
+         `\\´´\¸.·´
+    '''
+    engine.generate_banner('hello world', pattern=fish)
+
+生成的banner如下：
+
+.. image:: ./docs/img/fish.png
+    :width: 400
+
+增加特性和方法：
+
+- ``engine.patterns``: 查看所有内置的图案名称
+- ``engine.preview_patterns`` 预览所有的图案
 
 自定义banner
 ~~~~~~~~~~~~~~~~
 
+虽然可以通过 `set` 开头的方法直接设置登陆图案，但有时候，我们想要更多的控制。
