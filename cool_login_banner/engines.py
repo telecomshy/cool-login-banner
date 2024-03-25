@@ -42,6 +42,10 @@ class Engine(ABC):
     def back_colors(self):
         return list(Back.__dict__.keys())
 
+    @property
+    def styles(self):
+        return list(STYLE_LST.keys())
+
     @staticmethod
     def preview_fore_colors():
         for color in Fore.__dict__:

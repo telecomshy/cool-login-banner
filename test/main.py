@@ -10,5 +10,7 @@ text = """
 1. this site is a test site
 2. if you don't have account, please contact telecomshy
 """
-clb.set_ssh_banner(text='hello', name='fox')
+# clb.set_ssh_banner(text='hello', name='fox')
 # clb.clear_ssh_banner()
+
+print(clb.styles)

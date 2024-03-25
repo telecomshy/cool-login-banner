@@ -13,6 +13,8 @@ Cool Login Banner
 - `描述`_
 - `基本用法`_
     - `远程或本地`_
+    - `修改不同的banner`_
+    - `引擎通用方法`_
 
 安装
 ----------
@@ -38,9 +40,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
 .. code-block:: python
 
-    clb.clear_ssh_banner()
-
-除了远程，也可以设置本机的登陆banner。
+    bs.clear_ssh_banner()
 
 基于 ``colorama``, ``pyfiglet`` 和 ``cowsay``, 一共有三种不同风格的banner引擎：
 
@@ -61,7 +61,11 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
 ``BannerSetter`` 类会根据是否传递 ``host`` 参数来判断是远程连接还是本地执行。
 
+如果是远程登陆，所有关键字参数都会送给 ``fabric.Connection``, 除了 ``password`` 参数。因为 ``Connection``
+如果需要设置登陆密码，需要在 ``connect_kwargs`` 这个关键字参数里面设置，我觉得很不方便，进行了合并。
 
+本机执行程序的话，除了 ``engine``, 就不用传递额外参数了。不过不管是远程还是本机，账号需要有sudo的权限，如果sudo
+需要密码，则需要提供 ``password`` 参数。
 
 修改不同的banner
 ~~~~~~~~~~~~~~~~~~~
@@ -70,12 +74,27 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
 - ``set_ssh_banner`` : 设置ssh远程登陆的banner，此登陆之前显示。内部修改 /etc/ssh/sshd_config 文件
 - ``set_motd_banner`` : 设置成功登陆以后的banner。内部修改 /etc/motd 文件。
-- ``set_tty_banner`` : 设置本机终端登陆的banner，在登陆之前显示。内部修改的是 /etc/issue 文件。
-- ``set_telnet_banner`` : 设置telnet远程登陆的banner，在登陆之前显示。内部修改的是 /etc/issue_net 文件。
+- ``set_tty_banner`` : 设置本机终端登陆的banner，在登陆之前显示。内部修改 /etc/issue 文件。
+- ``set_telnet_banner`` : 设置telnet远程登陆的banner，在登陆之前显示。内部修改 /etc/issue_net 文件。
 
-通用引擎方法
+引擎通用方法
 ~~~~~~~~~~~~~~~~
 
+所有引擎都可以通过 ``fore_color``, ``back_color``, ``styles`` 关键字参数设置前景色，背景色以及风格。
+并且提供了以下几个方法查看内置的颜色或者进行预览：
+
+.. code-block::
+
+    engine.fore_colors                  # 查看所有前景色名称
+    engine.back_colors                  # 查看所有背景色名称
+    engine.styles                       # 查看所有风格
+    engine.preview_fore_colors()        # 预览前景色
+    engine.preview_back_colors()        # 预览背景色
+    engine.preview_styles()             # 预览风格
+
+.. note::
+
+    可以在 ``BannerSetter`` 实例上调用所有 ``engine`` 的方法
 
 figlet引擎
 ~~~~~~~~~~~~~~~~
@@ -83,5 +102,6 @@ figlet引擎
 cowsay引擎
 ~~~~~~~~~~~~~~~~
 
-
+自定义banner
+~~~~~~~~~~~~~~~~
 
