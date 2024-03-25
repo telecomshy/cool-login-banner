@@ -48,7 +48,8 @@ class BannerSetter:
     def save_ssh_banner(self, banner: str) -> None:
         """将banner保存到指定文件，配置/etc/ssh/sshd_config文件，并重启sshd服务"""
 
-        self.sudo(f"sed -i -r '/^#?Banner/a Banner {self.SSH_BANNER_PATH}' {self.SSHD_CONFIG_PATH}")
+        self.clear_ssh_banner()
+        self.sudo(f"sed -i '$a Banner {self.SSH_BANNER_PATH}' {self.SSHD_CONFIG_PATH}")
         self._save_text_to_file(banner, self.SSH_BANNER_PATH)
         self.sudo('systemctl restart sshd')
 

@@ -64,7 +64,7 @@ class TextEngine(Engine):
 
 
 class FigletEngine(Engine):
-    def generate_original_banner(self, text, font, **kwargs):
+    def generate_original_banner(self, text, font=pyfiglet.DEFAULT_FONT, **kwargs):
         return pyfiglet.figlet_format(text, font, **kwargs)
 
     @property
@@ -73,7 +73,7 @@ class FigletEngine(Engine):
 
 
 class CowsayEngine(Engine):
-    def generate_original_banner(self, name, text):
+    def generate_original_banner(self, text, name='cow'):
         if name in self.names:
             return cowsay.get_output_string(name, text) + '\n'
         else:
