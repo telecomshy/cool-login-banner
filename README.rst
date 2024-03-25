@@ -80,7 +80,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 banner引擎
 ~~~~~~~~~~~~~~~~
 
-``BannerSetter`` 的所有 ``set`` 开头的方法实际上都是在内部调用了引擎的 ``generate_banner`` 方法生成
+``BannerSetter`` 的所有 ``set_`` 开头的方法实际上都是在内部调用了引擎的 ``generate_banner`` 方法生成
 banner，两者的函数签名是一致的。
 
 所有引擎的 ``generate_banner`` 方法都接受以下几个参数，同时进行了扩展：
@@ -157,4 +157,30 @@ banner，两者的函数签名是一致的。
 自定义banner
 ~~~~~~~~~~~~~~~~
 
-虽然可以通过 `set` 开头的方法直接设置登陆图案，但有时候，我们想要更多的控制。
+虽然可以通过 ``BannerSetter`` 的 ``set_`` 开头方法直接设置登陆图案，但有时候，我们想要更多的控制。实际上，
+我们可以先通过引擎生成图案，然后再调用 ``BannerSetter`` ``save_`` 开头的方法保存到主机即可。
+
+下面是一个例子：
+
+.. code-block:: python
+
+    from cool_login_banner import BannerSetter, CowsayEngine, FigletEngine, TextEngine
+
+    text_engine = TextEngine()
+    cowsay_engine = CowsayEngine()
+    banner_setter = BannerSetter(host='192.168.17.10', user='username', password='password')
+
+    note_msg1 = "1. You must be a pretty girl\n"
+    note_msg2 = "2. You must be over 18 years old\n"
+
+    note_banner1 = text_engine.generate_banner(note_msg1, fore_color='red', styles=['blink'])
+    note_banner2 = text_engine.generate_banner(note_msg2, back_color='blue', styles=['blink'])
+    cowsay_banner = cowsay_engine.generate_banner('welcome, lovely girl', pattern='tux')
+
+    banner = note_banner1 + note_banner2 + cowsay_banner
+    banner_setter.save_ssh_banner(banner)
+
+生成的登陆图案如下：
+
+.. image:: ./docs/img/customize_banner.gif
+    :width: 400

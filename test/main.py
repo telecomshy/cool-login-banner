@@ -1,28 +1,17 @@
 from cool_login_banner import BannerSetter, CowsayEngine, FigletEngine, TextEngine
-from pyfiglet import figlet_format, Figlet
-from colorama import init, Back, Fore, just_fix_windows_console
-from termcolor import colored
 
-clb = BannerSetter(CowsayEngine, host='192.168.17.10', user='root', password='shy501024')
-# cl.preview_fore_colors()
+text_engine = TextEngine()
+cowsay_engine = CowsayEngine()
+banner_setter = BannerSetter(host='192.168.17.10', user='username', password='password')
 
-text = """
-1. this site is a test site
-2. if you don't have account, please contact telecomshy
-"""
-# clb.set_ssh_banner(text='hello', name='fox')
-# clb.clear_ssh_banner()
+note_msg1 = "1. You must be a pretty girl\n"
+note_msg2 = "2. You must be over 18 years old\n"
+
+note_banner1 = text_engine.generate_banner(note_msg1, fore_color='red', styles=['blink'])
+note_banner2 = text_engine.generate_banner(note_msg2, back_color='blue', styles=['blink'])
+cowsay_banner = cowsay_engine.generate_banner('welcome, lovely girl', pattern='tux')
+
+banner = note_banner1 + note_banner2 + cowsay_banner
+banner_setter.save_ssh_banner(banner)
 
 
-engine = CowsayEngine()
-fish = r'''
-\
- \  
-        /`·.¸
-     /¸...¸`:·
- ¸.·´  ¸   `·.¸.·´)
-: © ):´;      ¸  {
- `·.¸ `·  ¸.·´\`·¸)
-     `\\´´\¸.·´
-'''
-engine.generate_banner('hello world', pattern=fish)

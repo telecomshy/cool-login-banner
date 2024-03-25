@@ -7,7 +7,7 @@
     <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="modify readme.rst">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cool_login_banner/engines.py" beforeDir="false" afterPath="$PROJECT_DIR$/cool_login_banner/engines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cool_login_banner/banner_setter.py" beforeDir="false" afterPath="$PROJECT_DIR$/cool_login_banner/banner_setter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711332093567</updated>
-      <workItem from="1711332096933" duration="19329000" />
+      <workItem from="1711332096933" duration="21241000" />
     </task>
     <task id="LOCAL-00001" summary="modify readme.rst">
       <option name="closed" value="true" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711355756116</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modify readme.rst">
+      <option name="closed" value="true" />
+      <created>1711358646107</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711358646107</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +157,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="modify readme.rst" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cool_login_banner$main.coverage" NAME="main 覆盖结果" MODIFIED="1711355559191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$main.coverage" NAME="main 覆盖结果" MODIFIED="1711360027672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>

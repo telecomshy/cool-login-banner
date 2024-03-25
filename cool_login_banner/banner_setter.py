@@ -13,13 +13,14 @@ class BannerSetter:
     ISSUE_PATH: ClassVar[str] = '/etc/issue'
     ISSUE_NET_PATH: ClassVar[str] = '/etc/issue_net'
 
-    def __init__(self, engine: type(Engine), *, host: str | None = None, port: int = 22, user: str | None = None,
+    def __init__(self, engine: type(Engine) | None = None, *, host: str | None = None, port: int = 22, user: str | None = None,
                  password: str | None = None, encoding: str = 'utf8', **kwargs):
         """用户需要有sudo权限，如果没有设置免密，还需要设置password参数。所有关键字参数在内部都会传递给
         ``fabric.Connection`` 构造函数
 
         """
-        self.engine = engine()
+        self.engine = engine if engine is None else engine()
+
         if host:
             connect_kwargs = kwargs.setdefault('connect_kwargs', {})
             connect_kwargs['password'] = password
@@ -127,5 +128,8 @@ class BannerSetter:
 
     def __getattr__(self, name: str) -> Any:
         """其它方法和属性转接到engine实例"""
+
+        if self.engine is None:
+            raise ValueError("You haven't provided a banner engine yet")
 
         return getattr(self.engine, name)
