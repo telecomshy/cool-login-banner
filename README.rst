@@ -16,6 +16,7 @@ Cool Login Banner
     - `修改不同的banner`_
     - `banner引擎`_
     - `自定义banner`_
+- `说明`_
 
 安装
 ----------
@@ -185,3 +186,9 @@ banner，两者的函数签名是一致的。
 
 .. image:: ./docs/img/customize_banner.gif
     :width: 400
+
+说明
+----------
+
+Cool Login Banner 只是简单的进行了组合。感谢超级cool的 `pyfiglet <https://github.com/pwaller/pyfiglet>`_,
+`cowsay-python <https://github.com/VaasuDevanS/cowsay-python>`_, `colorama <https://github.com/tartley/colorama>`_ 。
