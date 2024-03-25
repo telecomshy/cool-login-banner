@@ -1,10 +1,7 @@
 Cool Login Banner
 ==================
 
-方便快捷的定制你的linux登录界面:
-
-.. image:: ./docs/img/login_banner.gif
-    :width: 400
+方便快捷的定制好玩的linux登录界面。
 
 目录
 ===========
@@ -37,6 +34,11 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 
     bs = BannerSetter(CowsayEngine, host='192.168.44.131', user='username', port=22, password='password')
     bs.set_ssh_banner(text="A python enthusiast's site", name='cow', fore_color='lightyellow_ex', styles=['blink'])
+
+登录主机，你的登录页面就变成这样了:
+
+.. image:: ./docs/img/login_banner.gif
+    :width: 400
 
 恢复也很容易：
 
