@@ -41,9 +41,9 @@ Cool Login Banner 使用很容易，创建 ``BannerSetter`` 对象，指定 bann
 
 ``BannerSetter`` 的函数签名是：
 
-.. py:class:: BannerSetter(engine: Engine, host: str | None = None, port: int = 22, user: str | None = None, password: str | None = None, encoding: str = 'utf8', **kwargs: any) -> None
+.. code-block:: python
 
-    :param engine: banner生成引擎
+    BannerSetter(engine: Engine, host: str | None = None, port: int = 22, user: str | None = None, password: str | None = None, encoding: str = 'utf8', **kwargs: any) -> None
 
 提供了四种方法，可以修改不同的login登陆页面：
 
