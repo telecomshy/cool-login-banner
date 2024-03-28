@@ -78,7 +78,6 @@ class BannerSetter:
         """生成banner并保存到/etc/motd文件，参数会送到引擎的generate_banner方法
 
         motd文件的内容，会在登录成功后显示
-
         """
         banner = self.generate_banner(*args, **kwargs)
         self.save_motd_banner(banner)
@@ -122,7 +121,7 @@ class BannerSetter:
         self.save_telnet_banner(banner)
 
     def __getattr__(self, name: str) -> Any:
-        """其它方法和属性转接到engine实例"""
+        """其它方法和属性都代理给Engine实例，这样可以不用再额外创建Engine实例"""
 
         if self.engine is None:
             raise ValueError("You haven't provided a banner engine yet")

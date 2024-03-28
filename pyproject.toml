@@ -12,10 +12,10 @@ cowsay = "^6.1"
 fabric = "^3.2.2"
 termcolor = "^2.4.0"
 invoke = "^2.2.0"
-pytest = "^8.1.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.1.1"
+pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
