@@ -1,24 +1,15 @@
 Cool Login Banner
-==================
+====================
 
 方便快捷的定制好玩的linux登录界面。
 
-目录
-===========
-
-- `安装`_
-- `描述`_
-- `基本用法`_
-   * `远程或本地`_
-   * `修改不同的banner`_
-   * `banner引擎`_
-   * `自定义banner`_
-- `说明`_
+.. contents:: 目录
+    :depth: 2
 
 安装
 ----------
 
-.. code-block::
+.. code:: shell
 
     pip install cool-login-banner
 
@@ -30,7 +21,7 @@ Cool Login Banner 设置主机登陆界面最快只需要2步：
 1. 创建 ``BannerSetter`` 对象。
 2. 调用不同的方法设置对应的登陆banner。
 
-.. code-block::
+.. code:: python
 
     from cool_login_banner import BannerSetter, CowsayEngine
 

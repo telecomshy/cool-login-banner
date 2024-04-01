@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="modify README.rst" />
+    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="modify README.rst">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +87,10 @@
       <option name="presentableId" value="Default" />
       <updated>1711332093567</updated>
       <workItem from="1711332096933" duration="21916000" />
+      <workItem from="1711361094099" duration="455000" />
+      <workItem from="1711442993143" duration="427000" />
+      <workItem from="1711499693038" duration="25000" />
+      <workItem from="1711933053986" duration="930000" />
     </task>
     <task id="LOCAL-00001" summary="modify readme.rst">
       <option name="closed" value="true" />
@@ -165,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711361005917</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="modify README.rst">
+      <option name="closed" value="true" />
+      <created>1711361263083</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711361263083</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
