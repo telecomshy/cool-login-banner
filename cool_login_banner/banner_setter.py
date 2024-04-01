@@ -25,6 +25,7 @@ class BannerSetter:
             self.conn = Connection(host, user=user, port=port, **kwargs)
             self.sudo = partial(self.conn.sudo, encoding=encoding, password=password, hide=True)
         else:
+            self.conn = None
             self.sudo = partial(sudo, encoding=encoding, password=password, hide=True)
 
     def _save_text_to_file(self, text: str, file: str) -> None:
