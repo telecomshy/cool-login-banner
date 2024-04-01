@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="modify README.rst">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="update README.rst">
       <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1711361094099" duration="455000" />
       <workItem from="1711442993143" duration="427000" />
       <workItem from="1711499693038" duration="25000" />
-      <workItem from="1711933053986" duration="930000" />
+      <workItem from="1711933053986" duration="1056000" />
     </task>
     <task id="LOCAL-00001" summary="modify readme.rst">
       <option name="closed" value="true" />
@@ -180,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711361263083</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update README.rst">
+      <option name="closed" value="true" />
+      <created>1711935285984</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711935285984</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +198,8 @@
     <MESSAGE value="version 0.1.0 ready go" />
     <MESSAGE value="version 0.1.0 prepared" />
     <MESSAGE value="modify README.rst" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify README.rst" />
+    <MESSAGE value="update README.rst" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.rst" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cool_login_banner$main.coverage" NAME="main 覆盖结果" MODIFIED="1711360027672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
