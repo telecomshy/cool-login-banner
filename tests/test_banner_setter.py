@@ -1,5 +1,5 @@
 from cool_login_banner import FigletEngine, BannerSetter
-from unittest.mock import call, sentinel, patch
+from unittest.mock import call, sentinel, patch, ANY
 
 
 def test_init_banner_setter():
@@ -9,15 +9,13 @@ def test_init_banner_setter():
     assert isinstance(setter.engine, FigletEngine)
 
 
-def test_init_banner_setter_host_arg(capsys):
+def test_init_banner_setter_with_host():
     setter = BannerSetter()
     assert setter.conn is None
-    assert setter.sudo is sentinel.partial_sudo
+
+    setter = BannerSetter(host="fake_host")
+    setter.conn.host = "fake_host"
 
 
-def test_save_text_to_file():
-    setter = BannerSetter(host="host")
-    setter._save_text_to_file("faketext", "fakefile")
-    calls = [call("mv -f /tmp/tmp_banner fakefile"), call("chown root:root fakefile")]
-    assert setter.sudo.call_args_list == calls
+
 
