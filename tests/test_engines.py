@@ -33,7 +33,7 @@ class TestFigletEngine:
         banner = figlet_engine.generate_banner(text='hello', styles=['blink'])
         assert '\x1b[5m' in banner
 
-    def test_figet_fonts(self, figlet_engine):
+    def test_figlet_fonts(self, figlet_engine):
         assert 'doom' in figlet_engine.figlet_fonts
 
 
