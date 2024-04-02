@@ -1,5 +1,5 @@
 from cool_login_banner import FigletEngine, BannerSetter
-from unittest.mock import call, patch, ANY
+from unittest.mock import call, ANY
 
 
 def test_init_banner_setter():
@@ -22,3 +22,9 @@ def test_save_text_to_file(banner_setter):
     banner_setter.conn.put.assert_called_once_with(ANY, "/tmp/tmp_banner")
     calls = [call("mv -f /tmp/tmp_banner fakefile"), call("chown root:root fakefile")]
     assert banner_setter.sudo.call_args_list == calls
+
+
+def test_clear_file_content(banner_setter):
+    banner_setter._clear_file_content("file")
+    banner_setter.sudo.assert_called_once_with('sed -i "/^/d" file')
+
