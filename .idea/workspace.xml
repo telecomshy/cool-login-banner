@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="update README.rst">
-      <change afterPath="$PROJECT_DIR$/tests/test_banner_setter.py" afterDir="false" />
+    <list default="true" id="6e0e11fb-0adf-4985-94e7-bb02759eb062" name="更改" comment="if not provide host, set self.conn None">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_engines.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_engines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_banner_setter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_banner_setter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +35,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python 测试.pytest (test_banner_setter.py 内).executor": "Coverage",
+    "Python 测试.pytest (tests 内).executor": "Coverage",
     "Python 测试.test_banner_setter.test_init_banner_setter 的 pytest.executor": "Run",
+    "Python 测试.test_banner_setter.test_init_banner_setter_with_host 的 pytest.executor": "Run",
     "Python 测试.test_banner_setter.test_save_text_to_file 的 pytest.executor": "Run",
     "Python 测试.test_engines.TestFigletEngine 的 pytest.executor": "Run",
+    "Python.banner_setter.executor": "Coverage",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -51,12 +52,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "settings.editor.selected.configurable": "coverage",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PyCoverageOptionsProvider">
+    <option name="myUseBundledCoveragePy" value="true" />
+    <option name="myBranchCoverage" value="true" />
+  </component>
   <component name="RunManager" selected="Python 测试.test_banner_setter.test_save_text_to_file 的 pytest">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="banner_setter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cool-login-banner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,12 +70,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cool_login_banner" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cool_login_banner/banner_setter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_banner_setter.test_init_banner_setter 的 pytest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest (test_banner_setter.py 内)" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="cool-login-banner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,7 +98,43 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_banner_setter.test_init_banner_setter&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_banner_setter.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest (tests 内)" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="cool-login-banner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_banner_setter.test_init_banner_setter_with_host 的 pytest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="cool-login-banner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_banner_setter.test_init_banner_setter_with_host&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -115,30 +156,13 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test_engines.TestFigletEngine 的 pytest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="cool-login-banner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_engines.TestFigletEngine&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python 测试.test_banner_setter.test_save_text_to_file 的 pytest" />
-        <item itemvalue="Python 测试.test_banner_setter.test_init_banner_setter 的 pytest" />
-        <item itemvalue="Python 测试.test_engines.TestFigletEngine 的 pytest" />
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python 测试.test_banner_setter.test_init_banner_setter_with_host 的 pytest" />
+        <item itemvalue="Python 测试.pytest (tests 内)" />
+        <item itemvalue="Python 测试.pytest (test_banner_setter.py 内)" />
+        <item itemvalue="Python.banner_setter" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +186,8 @@
       <workItem from="1711442993143" duration="427000" />
       <workItem from="1711499693038" duration="25000" />
       <workItem from="1711933053986" duration="2078000" />
-      <workItem from="1711937288801" duration="7160000" />
+      <workItem from="1711937288801" duration="10650000" />
+      <workItem from="1712018604836" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="modify readme.rst">
       <option name="closed" value="true" />
@@ -268,7 +293,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711935402098</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add BannerSetter test">
+      <option name="closed" value="true" />
+      <created>1711957983608</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711957983608</updated>
+    </task>
+    <task id="LOCAL-00015" summary="if not provide host, set self.conn None">
+      <option name="closed" value="true" />
+      <created>1711958069177</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711958069177</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,12 +321,18 @@
     <MESSAGE value="version 0.1.0 prepared" />
     <MESSAGE value="modify README.rst" />
     <MESSAGE value="update README.rst" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.rst" />
+    <MESSAGE value="add BannerSetter test" />
+    <MESSAGE value="if not provide host, set self.conn None" />
+    <option name="LAST_COMMIT_MESSAGE" value="if not provide host, set self.conn None" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cool_login_banner$test_banner_setter_test_init_banner_setter__pytest.coverage" NAME="test_banner_setter.test_init_banner_setter 的 pytest 覆盖结果" MODIFIED="1711956588777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/cool_login_banner$test_banner_setter_test_save_text_to_file__pytest.coverage" NAME="test_banner_setter.test_save_text_to_file 的 pytest 覆盖结果" MODIFIED="1711957906783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$pytest__tests__.coverage" NAME="pytest (tests 内) 覆盖结果" MODIFIED="1711961781392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$pytest__test_banner_setter_py__.coverage" NAME="pytest (test_banner_setter.py 内) 覆盖结果" MODIFIED="1711959956747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$banner_setter.coverage" NAME="banner_setter 覆盖结果" MODIFIED="1711959915688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cool_login_banner" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$test_banner_setter_test_save_text_to_file__pytest.coverage" NAME="test_banner_setter.test_save_text_to_file 的 pytest 覆盖结果" MODIFIED="1712019212942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/cool_login_banner$main.coverage" NAME="main 覆盖结果" MODIFIED="1711360027672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/cool_login_banner$test_banner_setter_test_init_banner_setter_with_host__pytest.coverage" NAME="test_banner_setter.test_init_banner_setter_with_host 的 pytest 覆盖结果" MODIFIED="1712018866818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/cool_login_banner$test_engines_TestFigletEngine__pytest.coverage" NAME="test_engines.TestFigletEngine 的 pytest 覆盖结果" MODIFIED="1711935800008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>
